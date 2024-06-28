@@ -1,34 +1,32 @@
 export default class Currency {
-    constructor(code, name) {
-        this._code = code;
-        this._name = name;
-    }
+  constructor(code, name) {
+    this.code = code;
+    this.name = name;
+  }
 
-    get code() {
-        return this._code;
-    }
+  displayFullCurrency() {
+    return `${this.name} (${this.code})`;
+  }
+}
 
-    set code(newCode) {
-        if (typeof newCode === 'string') {
-            this._code = newCode;
-        } else {
-            throw new TypeError('Code must be a string');
-        }
-    }
+export class Dollar extends Currency {
+  constructor(name, code) {
+    super(code, name);
+    this.locations = ['USA', 'Ecuador', 'Zimbabwe'];
+  }
 
-    get name() {
-        return this._name;
-    }
+  displayFullCurrency() {
+    return `${this.name} (${this.code}), from ${this.locations.join(', ')}`;
+  }
+}
 
-    set name(newName) {
-        if (typeof newName === 'string') {
-            this._name = newName;
-        } else {
-            throw new TypeError('Name must be a string');
-        }
-    }
+export class Euro extends Currency {
+  constructor(name, code) {
+    super(code, name);
+    this.locations = ['Eurozone', 'Monaco', 'Montenegro'];
+  }
 
-    displayFullCurrency() {
-        return `${this._name} (${this._code})`;
-    }
+  displayFullCurrency() {
+    return `${this.name} (${this.code}), from ${this.locations.join(', ')}`;
+  }
 }

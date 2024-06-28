@@ -1,24 +1,38 @@
 export default class HolbertonClass {
-    constructor(size, location) {
-        this._size = size;
-        this._location = location;
-    }
+  constructor(size, location, faculty) {
+    this._size = size;
+    this._location = location;
+    this._faculty = faculty;
+  }
 
-    get size() {
-        return this._size;
-    }
+  // Getters
+  get size() {
+    return this._size;
+  }
 
-    get location() {
-        return this._location;
-    }
+  get location() {
+    return this._location;
+  }
 
-    [Symbol.toPrimitive](hint) {
-        if (hint === 'number') {
-            return this._size;
-        }
-        if (hint === 'string') {
-            return this._location;
-        }
-        return this;
-    }
+  get faculty() {
+    return this._faculty;
+  }
+
+  // Setters
+  set size(newSize) {
+    this._size = newSize;
+  }
+
+  set location(newLocation) {
+    this._location = newLocation;
+  }
+
+  set faculty(newFaculty) {
+    this._faculty = newFaculty;
+  }
+
+  // Methods
+  toString() {
+    return `Size: ${this._size} - Location: ${this._location} - Faculty: ${this._faculty}`;
+  }
 }

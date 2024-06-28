@@ -1,5 +1,6 @@
-import Airport from "./7-airport.js";
+import Airport from './7-airport';
 
-const airportSF = new Airport('San Francisco Airport', 'SFO');
-console.log(airportSF);
-console.log(airportSF.toString());
+const airport1 = new Airport('JFK Airport', 'JFK');
+airport1.addAirline('Delta');
+airport1.addAirline('American Airlines');
+airport1.printAirports();

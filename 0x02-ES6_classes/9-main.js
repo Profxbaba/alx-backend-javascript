@@ -1,9 +1,7 @@
-import { listOfStudents } from "./9-hoisting.js";
+import hoistingSample from './9-hoisting';
 
-console.log(listOfStudents);
+const getRandNum = () => Math.floor(Math.random() * 100);
 
-const listPrinted = listOfStudents.map(
-    student => student.fullStudentDescription
-);
+console.log(`Random number: ${getRandNum()}`);
 
-console.log(listPrinted);
+hoistingSample();

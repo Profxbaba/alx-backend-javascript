@@ -1,9 +1,11 @@
-import Pricing from './4-pricing.js';
-import Currency from './3-currency.js';
+import Pricing from './4-pricing';
+import { Dollar, Euro } from './3-currency';
 
-const p = new Pricing(100, new Currency('EUR', 'Euro'));
-console.log(p);
-console.log(p.displayFullPrice());
+const p = new Pricing();
+console.log(p.convertPrice(100, 'USD')); // Example usage of Pricing class
 
-const convertedPrice = Pricing.convertPrice(100, 1.18);
-console.log('Converted price:', convertedPrice);
+const dollar = new Dollar('Dollar', 'USD');
+const euro = new Euro('Euro', 'EUR');
+
+console.log(dollar.displayFullCurrency());
+console.log(euro.displayFullCurrency());

@@ -1,4 +1,7 @@
-import Currency from "./3-currency.js";
+import { Dollar, Euro } from './3-currency';
 
-const dollar = new Currency('$', 'Dollars');
-console.log(dollar.displayFullCurrency()); // Expected output: Dollars ($)
+const dollar = new Dollar('Dollar', 'USD');
+const euro = new Euro('Euro', 'EUR');
+
+console.log(dollar.displayFullCurrency());
+console.log(euro.displayFullCurrency());

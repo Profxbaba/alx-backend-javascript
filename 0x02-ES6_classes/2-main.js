@@ -1,20 +1,26 @@
-import HolbertonCourse from "./2-hbtn_course.js";
+import HolbertonCourse from './2-hbtn_course';
 
-const c1 = new HolbertonCourse("ES6", 1, ["Bob", "Jane"])
-console.log(c1.name);
-c1.name = "Python 101";
-console.log(c1);
+function createCourse() {
+  const courseName = 'ES6';
+  const length = 30;
+  const students = ['Jane Doe', 'John Doe'];
 
-try {
-    c1.name = 12;
-} 
-catch(err) {
-    console.log(err);
+  try {
+    return new HolbertonCourse(courseName, length, students);
+  } catch (error) {
+    console.error(`Error creating course: ${error.message}`);
+    return null;
+  }
+}
+
+const c1 = createCourse();
+if (c1) {
+  console.log('Course created:', c1);
 }
 
 try {
-    const c2 = new HolbertonCourse("ES6", "1", ["Bob", "Jane"]);
-}
-catch(err) {
-    console.log(err);
+  const c2 = new HolbertonCourse('Python', 15, ['Grace Hopper', 'Betty Holberton']);
+  console.log('Course created:', c2);
+} catch (error) {
+  console.error(`Error creating course: ${error.message}`);
 }
