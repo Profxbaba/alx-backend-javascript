@@ -1,11 +1,5 @@
-import getListStudents from "./0-get_list_students.js";
+import getListStudents from './0-get_list_students';
+import getListStudentIds from './1-get_list_student_ids';
 
 console.log(getListStudents());
-
-bob@dylan:~$ 
-bob@dylan:~$ npm run dev 0-main.js 
-[
-  { id: 1, firstName: 'Guillaume', location: 'San Francisco' },
-  { id: 2, firstName: 'James', location: 'Columbia' },
-  { id: 5, firstName: 'Serena', location: 'San Francisco' }
-]
+console.log(getListStudentIds(getListStudents()));
