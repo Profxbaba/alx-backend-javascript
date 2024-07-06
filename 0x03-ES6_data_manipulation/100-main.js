@@ -1,15 +1,9 @@
-import { queryAPI, weakMap } from "./100-weak.js";
+import { queryAPI } from './100-weak';
 
-const endpoint = { protocol: 'http', name: 'getUsers' };
-weakMap.get(endpoint);
+const endpoint = new Map();
 
-queryAPI(endpoint);
-console.log(weakMap.get(endpoint));
+endpoint.set('users', 1);
+endpoint.set('comments', 1);
+endpoint.set('posts', 1);
 
-queryAPI(endpoint);
-console.log(weakMap.get(endpoint));
-
-queryAPI(endpoint);
-queryAPI(endpoint);
-queryAPI(endpoint);
-queryAPI(endpoint);
+console.log(queryAPI(endpoint));

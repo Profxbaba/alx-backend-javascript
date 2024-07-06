@@ -1,6 +1,11 @@
-import getListStudents from "./0-get_list_students.js";
-import updateStudentGradeByCity from "./4-update_grade_by_city.js";
+import getListStudents from './0-get_list_students';
+import updateStudentGradeByCity from './4-update_grade_by_city';
 
-console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }, { studentId: 1, grade: 86 }]));
+const students = getListStudents();
 
-console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }]));
+console.log(updateStudentGradeByCity(students, 'San Francisco', [
+  { studentId: 1, newGrade: 90 },
+  { studentId: 2, newGrade: 85 },
+]));
+
+// End of file

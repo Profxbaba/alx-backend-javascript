@@ -9,7 +9,7 @@ export function queryAPI(endpoint) {
   }
 
   // Increment the query count for the endpoint
-  let count = weakMap.get(endpoint) + 1;
+  const count = weakMap.get(endpoint) + 1;
   weakMap.set(endpoint, count);
 
   // Check if query count has reached 5 or more

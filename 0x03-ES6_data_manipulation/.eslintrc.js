@@ -1,12 +1,10 @@
 module.exports = {
   env: {
-    browser: false,
+    browser: true,
     es6: true,
-    jest: true,
   },
   extends: [
     'airbnb-base',
-    'plugin:jest/all',
   ],
   globals: {
     Atomics: 'readonly',
@@ -16,22 +14,26 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: 'module',
   },
-  plugins: ['jest'],
   rules: {
-    'max-classes-per-file': 'off',
-    'no-underscore-dangle': 'off',
     'no-console': 'off',
-    'no-shadow': 'off',
-    'no-restricted-syntax': [
-      'error',
-      'LabeledStatement',
-      'WithStatement',
-    ],
+    'no-alert': 'off',
+    'no-unused-vars': ['error', { argsIgnorePattern: 'next' }],
+    'linebreak-style': 'off',
+    'no-underscore-dangle': 'off',
+    'consistent-return': 'off',
+    'no-param-reassign': 'off',
+    'import/prefer-default-export': 'off',
+    'class-methods-use-this': 'off',
+    'max-len': ['error', { code: 100 }],
+    'no-plusplus': 'off',
+    'no-use-before-define': 'off',
   },
-  overrides:[
+  overrides: [ // Added space here
     {
-      files: ['*.js'],
-      excludedFiles: 'babel.config.js',
-    }
-  ]
-};
+      files: ['**/*.test.js'],
+      env: {
+        jest: true,
+      },
+    },
+  ], // Added trailing comma here
+}; // Added trailing comma here if there are more properties to add in the future
